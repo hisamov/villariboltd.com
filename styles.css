@@ -1,0 +1,87 @@
+/* Villaribo brand kit (7 Oct 2026): Ink, Red (dot and large accents only), Paper, White, Grey; Jost 500 headings.
+   Layout: one column of full-width bands, paper hero, white body, ink contact and footer. */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 400 500;
+  font-display: swap;
+  src: url('/assets/fonts/jost-latin.woff2') format('woff2');
+}
+
+:root {
+  --ink: #101820;
+  --red: #E5484D;
+  --paper: #F3F4F1;
+  --white: #FFFFFF;
+  --grey: #56606A;
+  --line: #D9DCD6;
+  --on-ink-muted: #A3ACB5;
+  --focus: #B4232A;
+  --font: 'Jost', 'Century Gothic', 'Futura', 'Trebuchet MS', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--white); color: var(--ink); font-family: var(--font); font-size: 1.125rem; line-height: 1.55; }
+h1, h2, h3, p, ul { margin: 0; }
+ul { padding: 0; list-style: none; }
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; }
+a:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+
+.wrap { max-width: 1040px; margin-inline: auto; padding-inline: max(20px, env(safe-area-inset-left, 0px)) max(20px, env(safe-area-inset-right, 0px)); }
+
+h1 { font-weight: 500; font-size: clamp(2rem, 5.2vw, 3.4rem); line-height: 1.1; letter-spacing: -0.01em; text-wrap: balance; }
+h2 { font-weight: 500; font-size: 0.85rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--grey); }
+h3 { font-weight: 500; font-size: 1.35rem; line-height: 1.25; }
+
+/* header */
+.site-head { background: var(--paper); }
+.site-head .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px; padding-block: 22px; }
+.logo img { width: 180px; }
+.head-mail { font-weight: 500; text-underline-offset: 4px; padding-block: 10px; }
+
+/* hero */
+.hero { background: var(--paper); }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 48px; padding-block: 56px 88px; }
+.hero-text { display: flex; flex-direction: column; align-items: flex-start; gap: 24px; min-width: 0; }
+.eyebrow { font-weight: 500; font-size: 0.85rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--grey); }
+.lede { font-size: 1.3rem; line-height: 1.45; max-width: 34em; }
+.hero-mark { width: clamp(150px, 22vw, 260px); }
+.btn { display: inline-flex; align-items: center; min-height: 48px; padding: 0 26px; background: var(--ink); color: var(--white); font-weight: 500; text-decoration: none; border-radius: 6px; }
+.btn:hover { background: #24303B; }
+
+/* services */
+.services .wrap { display: flex; flex-direction: column; gap: 32px; padding-block: 80px; }
+.service-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 56px; }
+.service-list li { display: flex; flex-direction: column; gap: 8px; padding-block: 26px; border-top: 1px solid var(--line); }
+.service-list p { color: var(--grey); max-width: 30em; }
+
+/* about */
+.about { border-top: 1px solid var(--line); }
+.about-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 3fr); gap: 24px 56px; padding-block: 80px; }
+.about-body { display: flex; flex-direction: column; gap: 14px; }
+.big { font-weight: 500; font-size: clamp(1.6rem, 3.6vw, 2.3rem); line-height: 1.2; text-wrap: balance; }
+
+/* contact */
+.contact { background: var(--ink); color: var(--white); }
+.contact .wrap { display: flex; flex-direction: column; gap: 14px; padding-block: 80px; }
+.contact h2 { color: var(--on-ink-muted); }
+.contact-line { color: var(--on-ink-muted); margin-top: 10px; }
+.mail { font-weight: 500; font-size: clamp(1.5rem, 5.6vw, 2.8rem); line-height: 1.2; text-decoration-color: var(--red); text-decoration-thickness: 3px; text-underline-offset: 8px; overflow-wrap: anywhere; }
+.contact a:focus-visible, .site-foot a:focus-visible { outline-color: #FF8A8E; }
+
+/* footer */
+.site-foot { background: var(--ink); color: var(--on-ink-muted); font-size: 0.95rem; }
+.site-foot .wrap { display: flex; flex-direction: column; gap: 18px; padding-block: 8px 48px; }
+.site-foot img { width: 135px; }
+.site-foot .small { font-size: 0.85rem; }
+
+@media (max-width: 720px) {
+  .hero-grid { grid-template-columns: minmax(0, 1fr); padding-block: 32px 56px; }
+  .hero-mark { display: none; }
+  .lede { font-size: 1.15rem; }
+  .service-list, .about-grid { grid-template-columns: minmax(0, 1fr); }
+  .services .wrap, .about-grid, .contact .wrap { padding-block: 56px; }
+  .site-foot br { display: none; }
+}
