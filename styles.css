@@ -1,4 +1,4 @@
-/* Villaribo brand kit (7 Oct 2026): Ink, Red (dot and large accents only), Paper, White, Grey; Jost 500 headings.
+/* Villaribo brand kit (7 Oct 2026): Ink, Red (dot and large accents only), Paper, White, Grey; Jost 500 headings; body text in the system font, because Jost is unhinted and renders unevenly at text sizes on Windows.
    Layout: one column of full-width bands, paper hero, white body, ink contact and footer. */
 @font-face {
   font-family: 'Jost';
@@ -17,12 +17,14 @@
   --line: #D9DCD6;
   --on-ink-muted: #A3ACB5;
   --focus: #B4232A;
-  --font: 'Jost', 'Century Gothic', 'Futura', 'Trebuchet MS', sans-serif;
+  --display: 'Jost', 'Century Gothic', 'Futura', 'Trebuchet MS', sans-serif;
+  --body: system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: var(--white); color: var(--ink); font-family: var(--font); font-size: 1.125rem; line-height: 1.55; }
+body { margin: 0; background: var(--white); color: var(--ink); font-family: var(--body); font-size: 1.0625rem; line-height: 1.6; }
+h1, h2, h3, .eyebrow, .big, .mail, .btn, .head-mail { font-family: var(--display); }
 h1, h2, h3, p, ul { margin: 0; }
 ul { padding: 0; list-style: none; }
 img { max-width: 100%; height: auto; display: block; }
@@ -46,7 +48,7 @@ h3 { font-weight: 500; font-size: 1.35rem; line-height: 1.25; }
 .hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 48px; padding-block: 56px 88px; }
 .hero-text { display: flex; flex-direction: column; align-items: flex-start; gap: 24px; min-width: 0; }
 .eyebrow { font-weight: 500; font-size: 0.85rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--grey); }
-.lede { font-size: 1.3rem; line-height: 1.45; max-width: 34em; }
+.lede { font-size: 1.25rem; line-height: 1.5; max-width: 34em; }
 .hero-mark { width: clamp(150px, 22vw, 260px); }
 .btn { display: inline-flex; align-items: center; min-height: 48px; padding: 0 26px; background: var(--ink); color: var(--white); font-weight: 500; text-decoration: none; border-radius: 6px; }
 .btn:hover { background: #24303B; }
